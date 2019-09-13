@@ -1,0 +1,13 @@
+# Datos de campaña de Marketing en Portugal
+download.file(
+  url = "https://raw.githubusercontent.com/jboscomendoza/r-principiantes-bookdown/master/datos/bank.csv", 
+  destfile = "bank.csv")
+
+# Damos un vistazo al contenido del archivo bank.csv con readLines().
+readLines("bank.csv", n = 4) 
+
+# Importarlos como un data frame
+banco <- read.csv(file = "bank.csv", sep = ";")
+
+# Diagrama de caja
+plot(x = banco$education, y = banco$age)
