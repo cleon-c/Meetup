@@ -1,3 +1,5 @@
+### Primera parte ###
+
 # Datos de campaña de Marketing en Portugal
 download.file(
   url = "https://raw.githubusercontent.com/jboscomendoza/r-principiantes-bookdown/master/datos/bank.csv", 
@@ -11,3 +13,16 @@ banco <- read.csv(file = "bank.csv", sep = ";")
 
 # Diagrama de caja
 plot(x = banco$education, y = banco$age)
+
+
+
+
+### Segunda parte ###
+
+# Diagrama de caja con onda 
+library(ggplot2)
+boxplot_con_onda <- ggplot(banco, aes(x = education, y = age, color= education))
+boxplot_con_onda +
+  geom_boxplot(notch = TRUE) +
+  theme_classic()
+
